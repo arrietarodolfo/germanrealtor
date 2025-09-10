@@ -61,6 +61,45 @@
         loop: true,
         nav: false
     });
+
+// Closing Ceremonies Stack Carousel
+const carousel = document.querySelector('.closing-stack-carousel');
+if (carousel) {
+    const S = carousel.style;
+    const N = +S.getPropertyValue('--n');
+    let k = +S.getPropertyValue('--k');
+    let autoPlayInterval;
+
+    // Auto-play functionality
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            k = (k + 1) % N;
+            S.setProperty('--k', k);
+        }, 3000); // Change image every 3 seconds
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Manual navigation
+    carousel.addEventListener('click', e => {
+        let v = +e.target.dataset.inc;
+        if(v) {
+            k = (k + v + N) % N;
+            S.setProperty('--k', k);
+            stopAutoPlay(); // Stop auto-play when user interacts
+            setTimeout(startAutoPlay, 5000); // Resume auto-play after 5 seconds
+        }
+    });
+
+    // Start auto-play when page loads
+    startAutoPlay();
+
+    // Pause auto-play when hovering over carousel
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+}
     
 })(jQuery);
 

@@ -32,6 +32,21 @@
     font-weight: bold;
 }
 
+.acomp-title .letter-n {
+    font-weight: bold;
+}
+
+/* Team images size control */
+.team-item img {
+    height: 700px;
+    object-fit: cover;
+    object-position: top;
+    transition: .5s;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 .about-award-box {
     background-color: #964726 !important;
 }
@@ -318,12 +333,8 @@
 
 
 /*** Our Team ***/
-.team-item img {
-    transition: .5s;
-}
-  
 .team-item:hover img {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
   
 .team-overlay {
@@ -497,4 +508,231 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/* Closing Ceremonies Stack Carousel */
+:root {
+	--t: 0.8s;
+}
+
+/* register these two so they can be transitioned */
+@property --p {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true
+}
+@property --v {
+	syntax: '<number>';
+	initial-value: 0;
+	inherits: true
+}
+
+/* Stack carousel container */
+.closing-stack-carousel {
+	/* set previous top item index to current top index */
+	--p: var(--k);
+	/* abs of difference between current & previous top item indices */
+	--abs-p: abs(var(--k) - var(--p));
+	/* animation from one end of the n > 2 length list to another? */
+	--end: clamp(0, var(--abs-p) - 1, 1);
+	/* direction we're going in */
+	--dir: calc((1 - 2*var(--end))*sign(var(--k) - var(--p)));
+	/* forward direction flag: 0 backwards, 1 forwards */
+	--fwd: calc(.5*(1 + var(--dir)));
+	/* set animated value of top item index to current top index */
+	--v: var(--k);
+	/* absolute value of difference between animated & previous top index */
+	--abs-v: abs(var(--v) - var(--p));
+	/* animation progress as a decimal value */
+	--prg: calc(var(--abs-v)/(1 - var(--end) + var(--end)*(var(--n) - 1)));
+	
+	/* bigger space between the two columns (image stack & all else) */
+	display: grid;
+	grid-gap: .5em 4em;
+	grid-template: /* 4 row, 2 col grid */
+		repeat(2, max-content) 1fr max-content/ 
+		max-content 1fr;
+	place-self: center;
+	color: #f1f5f9;
+	font: 1em 'Golften', sans-serif;
+	counter-reset: k calc(1 + var(--k)) n var(--n);
+	/* transition previous & animated top item indices 
+	 * so they don't change instantly like the current one */
+	transition: --p 0s var(--t), --v var(--t);
+	min-height: 500px; /* Ensure enough space */
+	
+	/* counter & binomial name faded */
+}
+
+.closing-stack-carousel::before { 
+	color: RGB(from currentColor r g b/ .6);
+	grid-area: 1/ 2; /* all grid areas need to be set manually */
+	width: 3ch;
+	text-align: right;
+	content: counter(k) '/' counter(n);
+	
+	/* Chrome compatibility */
+	@supports not (scale: Abs(-2)) {
+		--abs-p: max(var(--k) - var(--p), var(--p) - var(--k));
+		--abs-v: max(var(--v) - var(--p), var(--p) - var(--v))
+	}
+	
+	@supports not (scale: Sign(-2)) {
+		--dir: clamp(-1, (var(--k) - var(--p))*100000, 1)
+	}
+}
+
+.closing-stack-carousel article {
+	/* absolute value difference between currently top item index and current item index */
+	--abs-top: abs(var(--k) - var(--i));
+	/* not top item if the absoute value difference ≥ 1 */
+	--not-top: min(1, var(--abs-top));
+	/* top flag is the negation */
+	--top: calc(1 - var(--not-top));
+	/* difference between moving image index */
+	--val-mov: ((1 - var(--fwd))*var(--p) + var(--fwd)*var(--k) - var(--i));
+	--abs-mov: abs(var(--val-mov));
+	/* not moving image if the absoute value difference > 1 */
+	--not-mov: min(1, var(--abs-mov));
+	/* moving flag is the negation */
+	--mov: calc(1 - var(--not-mov));
+	
+	grid-area: 1/ 1/ -1/ -1;
+	grid-template: subgrid/ subgrid;
+	/* z-index depends on number of items, its own index and top item index */
+	z-index: mod(calc(var(--n) - 1 + var(--i) - var(--k)), var(--n));
+	/* transition z-index */
+	transition: z-index var(--t) cubic-bezier(1, -.9, 0, 1.9);
+	
+	/* Chrome compatibility */
+	@supports not (scale: Abs(-2)) {
+		--abs-top: max(var(--k) - var(--i), var(--i) - var(--k));
+		--abs-mov: max(var(--val-mov), -1*var(--val-mov));
+	}
+}
+
+
+.closing-stack-carousel img {
+	/* value that grows from 0 to 1, then goes back to 0 during transition */
+	--sin: sin(var(--prg)*.5turn);
+	grid-area: 1/ 1/ -1; /* occupy entire first column */
+	/* slight glow effect with brand color */
+	border: solid 2px rgba(150, 71, 38, .5);
+	height: 20em;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: .75em;
+	/* slide just moving image out & back in */
+	translate: calc(-150%*var(--mov)*sqrt(var(--sin)));
+	/* random rotation, but not during slide out & back in transition */
+	rotate: calc((1 - var(--sin))*var(--a));
+	/* Add smooth transition for all transforms */
+	transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.closing-stack-carousel div { /* button wrapper */
+	display: flex;
+	gap: 2em;
+	grid-area: 4/ 2;
+	/* prevent button clicks during animation */
+	z-index: 999;
+	position: relative;
+}
+
+.closing-stack-carousel button { /* prettify button */
+	--sgn: -1;
+	--prc: calc(var(--hov, 0)*100%);
+	--c: color-mix(in hsl, #964726 var(--prc), #52527a);
+	border: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: #1e3a8a;
+	color: white;
+	font: 900 1.5em/ 1 sans-serif;
+	transition: .3s ease-out;
+	transition-property: background-color, color;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+.closing-stack-carousel button::before { /* arrow, SVG likely better, whatever */
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	position: absolute;
+}
+
+.closing-stack-carousel button[data-inc='-1']::before {
+	border-width: 8px 12px 8px 0;
+	border-color: transparent #60a5fa transparent transparent;
+	margin-left: -2px;
+}
+
+.closing-stack-carousel button[data-inc='1']::before {
+	border-width: 8px 0 8px 12px;
+	border-color: transparent transparent transparent white;
+	margin-right: -2px;
+}
+
+.closing-stack-carousel button:hover {
+	background: #1e40af;
+	transform: scale(1.1);
+}
+
+.closing-stack-carousel button[data-inc='-1']:hover::before {
+	border-color: transparent #93c5fd transparent transparent;
+}
+
+.closing-stack-carousel button[data-inc='1']:hover::before {
+	border-color: transparent transparent transparent #f3f4f6;
+}
+
+
+/* Closing Ceremonies Title */
+.closing-ceremonies-title {
+    font-family: 'Golften', sans-serif;
+}
+
+.closing-ceremonies-title span {
+    font-family: 'Golften', sans-serif;
+    font-weight: bold;
+}
+
+/* Closing Ceremonies - Adjust for vertical photos with background frame */
+.testimonial-carousel .testimonial-img {
+    padding: 20px !important;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.testimonial-carousel .testimonial-img::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bs-primary);
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.testimonial-carousel .testimonial-img img {
+    max-height: 400px !important;
+    max-width: 300px !important;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    position: relative;
+    z-index: 1;
 }

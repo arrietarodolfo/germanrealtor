@@ -55,19 +55,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                        <a href="about.html" class="nav-item nav-link">Acerca de</a>
-                        <a href="service.html" class="nav-item nav-link">Servicios</a>
-                        <a href="project.html" class="nav-item nav-link">Propiedades</a>
-                        <div class="nav-item dropdown">
-                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="feature.html" class="dropdown-item">Características</a>
-                                <a href="team.html" class="dropdown-item">Nuestro Equipo</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonios</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                        <a href="#inicio" class="nav-item nav-link">Inicio</a>
+                        <a href="#acerca-de" class="nav-item nav-link">Acerca de</a>
+                        <a href="#nuestra-garantia" class="nav-item nav-link">Nuestra Garantía</a>
+                        <a href="#servicios" class="nav-item nav-link">Servicios</a>
+                        <a href="#equipo" class="nav-item nav-link">Equipo</a>
+                        <a href="#contacto" class="nav-item nav-link">Contacto</a>
                     </div>
                 </div>
             </nav>
@@ -77,7 +70,7 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid pb-5 hero-header bg-light mb-5">
+    <div id="inicio" class="container-fluid pb-5 hero-header bg-light mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center mb-5">
                 <div class="col-lg-6">
@@ -131,9 +124,9 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5" style="padding-top: 6rem !important; padding-bottom: 6rem !important;">
+    <div id="acerca-de" class="container-fluid py-5" style="padding-top: 6rem !important; padding-bottom: 6rem !important;">
         <div class="container">
-            <div class="row g-5" style="margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="row g-5 about-section" style="margin-top: 2rem; margin-bottom: 2rem;">
                 <div class="col-lg-6">
                     <div class="row g-3 h-100">
                         <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
@@ -182,7 +175,7 @@
 
 
     <!-- Feature Start -->
-    <div class="container-fluid py-5">
+    <div id="nuestra-garantia" class="container-fluid py-5">
         <div class="container">
             <div class="text-center wow fadeIn" data-wow-delay="0.1s">
                 <h1 class="mb-5 hero-title">Razones para <span class="text-uppercase text-primary bg-light px-2">ELEGIRNOS</span>
@@ -227,68 +220,128 @@
 
 
     <!-- Service Start -->
-    <div class="container-fluid py-5">
+    <div id="servicios" class="container-fluid py-5">
         <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                    <h1 class="mb-5">Nuestros <span
-                            class="text-uppercase text-primary bg-light px-2">Servicios</span></h1>
-                    <p>Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor eirmod magna dolore erat amet</p>
-                    <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor eirmod magna dolore erat amet</p>
+            <!-- Título centrado -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h1 class="mb-5 hero-title">Nuestros <span class="text-uppercase text-primary bg-light px-2">Servicios</span></h1>
+                </div>
+            </div>
+
+            <!-- 8 Servicios en grid -->
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-1.jpg" alt="">
+                            <h3>Compra de Vivienda</h3>
+                        </div>
+                        <p class="mb-0">Primer hogar y move-up. Te ayudamos a encontrar la casa perfecta para tu familia.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-2.jpg" alt="">
+                            <h3>Nueva Construcción</h3>
+                        </div>
+                        <p class="mb-0">DR Horton, Fischer, Smith Douglas, etc. Especialistas en nuevas construcciones.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-3.jpg" alt="">
+                            <h3>Venta de Propiedad</h3>
+                        </div>
+                        <p class="mb-0">Preparación, pricing y marketing. Maximizamos el valor de tu propiedad.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-4.jpg" alt="">
+                            <h3>Pre-aprobación</h3>
+                        </div>
+                        <p class="mb-0">Coordinación de pre-aprobación y comparación de opciones con nuestros LOs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-1.jpg" alt="">
+                            <h3>Orientación Financiera</h3>
+                        </div>
+                        <p class="mb-0">Crédito/finanzas para calificar mejor. Educativa, no credit repair legal.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-2.jpg" alt="">
+                            <h3>Relocation</h3>
+                        </div>
+                        <p class="mb-0">Relocation y red de referidos en otros estados para tu mudanza.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-3.jpg" alt="">
+                            <h3>Inversión</h3>
+                        </div>
+                        <p class="mb-0">Inversión y second home. Incluye renta corta cuando aplica.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.8s">
+                    <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
+                        <div class="service-img position-relative mb-4">
+                            <img class="img-fluid w-100" src="img/service-4.jpg" alt="">
+                            <h3>Tours Virtuales</h3>
+                        </div>
+                        <p class="mb-0">Tours virtuales y acompañamiento hasta el cierre de tu propiedad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp Contact -->
+            <div class="row justify-content-center mb-5 mt-5">
+                <div class="col-lg-8">
                     <a href="https://wa.me/14077894529" target="_blank" class="text-decoration-none">
-                        <div class="d-flex align-items-center bg-light" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                        <div class="d-flex align-items-center justify-content-center" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                             <div class="btn-square flex-shrink-0 bg-primary d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
                                 <i class="fa fa-comments fa-3x text-white"></i>
                             </div>
-                            <div class="px-3">
-                                <h3 class="text-dark">+1 407 789 4529</h3>
+                            <div class="px-3 bg-light" style="padding: 20px 30px; border-radius: 0 8px 8px 0;">
+                                <h3 class="text-dark mb-1">+1 407 789 4529</h3>
                                 <span class="text-dark">Escríbenos por WhatsApp para una consulta gratuita</span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-7">
-                    <div class="row g-0">
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
-                                <a href="#!" class="service-img position-relative mb-4">
-                                    <img class="img-fluid w-100" src="img/service-1.jpg" alt="">
-                                    <h3>Compra de Vivienda</h3>
-                                </a>
-                                <p class="mb-0">Te ayudamos a encontrar la casa perfecta para tu familia. Guiamos todo el proceso de compra desde la búsqueda hasta el cierre.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
-                                <a href="#!" class="service-img position-relative mb-4">
-                                    <img class="img-fluid w-100" src="img/service-2.jpg" alt="">
-                                    <h3>Venta de Propiedades</h3>
-                                </a>
-                                <p class="mb-0">Maximizamos el valor de tu propiedad con estrategias de marketing efectivas y un proceso de venta transparente.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
-                            <div class="service-item h-100 d-flex flex-column justify-content-center bg-light">
-                                <a href="#!" class="service-img position-relative mb-4">
-                                    <img class="img-fluid w-100" src="img/service-3.jpg" alt="">
-                                    <h3>Asesoramiento Inmobiliario</h3>
-                                </a>
-                                <p class="mb-0">Te brindamos asesoría experta sobre el mercado inmobiliario, financiamiento y todas las opciones disponibles.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.8s">
-                            <div class="service-item h-100 d-flex flex-column justify-content-center bg-primary">
-                                <a href="#!" class="service-img position-relative mb-4">
-                                    <img class="img-fluid w-100" src="img/service-4.jpg" alt="">
-                                    <h3>Acompañamiento Personal</h3>
-                                </a>
-                                <p class="mb-0">Te acompañamos en cada paso del proceso, desde la primera consulta hasta la entrega de llaves de tu nuevo hogar.</p>
-                            </div>
-                        </div>
+            </div>
+
+            <!-- Descripción del proceso -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="text-center mb-4">
+                        <h3 class="mb-3">Nuestro Proceso:</h3>
+                        <p class="mb-4">Comenzamos con una reunión inicial para entender tus necesidades, luego coordinamos tu pre-aprobación financiera. Realizamos una búsqueda avanzada de propiedades que se ajusten a tu presupuesto y preferencias. Una vez que encuentres la propiedad ideal, te ayudamos a preparar y presentar una oferta competitiva. Gestionamos toda la negociación y documentación del contrato, coordinamos las garantías e inspecciones necesarias, y te preparamos completamente para el cierre. Finalmente, te acompañamos en el cierre para que recibas las llaves de tu nuevo hogar.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Material visual -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="text-center mb-4">
+                        <h3 class="mb-3">Material visual que te comparto:</h3>
+                        <p class="mb-4">• Headshots de ambos (fondo limpio) + 1 foto juntos "estilo equipo".<br>
+                        • Entregas de llaves (clientes/familias – rostros felices).<br>
+                        • Detrás de cámaras (tours, reuniones, construcciones).<br>
+                        • Testimonios (foto del cliente + frase corta).<br>
+                        • Reels/clips verticales para compilar un video de entregas.</p>
                     </div>
                 </div>
             </div>
@@ -302,7 +355,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid bg-light py-5">
+    <div id="equipo" class="container-fluid bg-light py-5">
         <div class="container py-5">
             <h1 class="mb-5 hero-title acomp-title">Te vamos a estar <span class="text-uppercase text-primary bg-light px-2">Acompa<span class="letter-n">ñ</span>ando</span>
             </h1>
@@ -360,7 +413,7 @@
 
 
     <!-- Closing Ceremonies Start -->
-    <div class="container-xxl py-5">
+    <div id="ceremonias-cierre" class="container-xxl py-5">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-12 text-center mb-5">
@@ -544,7 +597,7 @@
 
 
     <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary newsletter p-0">
+    <div id="contacto" class="container-fluid bg-primary newsletter p-0">
         <div class="container p-0">
             <div class="row g-0 align-items-center">
                 <div class="col-md-5 ps-lg-0 text-start wow fadeIn" data-wow-delay="0.2s">
@@ -552,15 +605,50 @@
                 </div>
                 <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-5">
-                        <h1 class="mb-5">Subscribe the <span
-                                class="text-uppercase text-primary bg-white px-2">Newsletter</span></h1>
-                        <div class="position-relative w-100 mb-2">
-                            <input class="form-control border-0 w-100 ps-4 pe-5" type="text"
-                                placeholder="Enter Your Email" style="height: 60px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
-                                    class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        <h1 class="mb-5 hero-title">Estamos para <span
+                                class="text-uppercase text-primary bg-white px-2">ATENDERTE</span></h1>
+                        
+                        <!-- WhatsApp Contact -->
+                        <div class="mb-4">
+                            <a href="https://wa.me/14077894529" target="_blank" class="text-decoration-none">
+                                <div class="d-flex align-items-center justify-content-center" style="cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                    <div class="btn-square flex-shrink-0 bg-primary d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
+                                        <i class="fa fa-comments fa-3x text-white"></i>
+                                    </div>
+                                    <div class="px-3 bg-light" style="padding: 20px 30px; border-radius: 0 8px 8px 0;">
+                                        <h3 class="text-dark mb-1">+1 407 789 4529</h3>
+                                        <span class="text-dark">Escríbenos por WhatsApp para una consulta gratuita</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <p class="mb-0">Diam sed sed dolor stet amet eirmod</p>
+
+                        <!-- Download Guide Button -->
+                        <div class="text-center mb-4">
+                            <a href="https://germanmarrufo.lpthomesearch.com/marrufo-german1?utm_source=social_studio&cpclid=5753934723968" target="_blank" class="btn btn-primary btn-lg px-5 py-3 btn-download-guide" style="border-radius: 8px;">
+                                <i class="fa fa-download me-2"></i>
+                                Descargar: Guía de 9 pasos para comprar con éxito
+                            </a>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="text-center">
+                            <h5 class="text-primary mb-3">Síguenos en nuestras redes</h5>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a class="btn btn-outline-primary btn-square border-2" href="https://www.instagram.com/germanmrealtor/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="btn btn-outline-primary btn-square border-2" href="https://www.tiktok.com/@germanmrealtor" target="_blank">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                                <a class="btn btn-outline-primary btn-square border-2" href="https://www.youtube.com/channel/UCGP82dCuR_O61IFl3ZWtmXw" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a class="btn btn-outline-primary btn-square border-2" href="https://www.facebook.com/germanmarrufo94/" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -573,14 +661,14 @@
     <div class="container-fluid bg-dark text-white-50 footer pt-5">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="col-md-8 wow fadeIn" data-wow-delay="0.1s">
                     <a href="index.html" class="d-inline-block mb-3">
-                        <img src="img/German Marrufo Logo-01.png" alt="German Marrufo" style="height: 50px;">
+                        <img src="img/German Marrufo Logo-01.png" alt="German Marrufo" style="height: 100px;">
                     </a>
                     <p class="mb-0">Nuestra misión es acompañar a las familias hispanas en Estados Unidos a cumplir el sueño de comprar su primer hogar, brindándoles asesoría clara, honesta y personalizada en cada paso del proceso. Nos enfocamos en generar confianza, educar y negociar siempre lo mejor para nuestros clientes, para que tomen decisiones seguras y sin miedo.
                     </p>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="col-md-4 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Contáctanos</h5>
                     <p><i class="fa fa-map-marker-alt me-3"></i>Atlanta, Georgia, USA</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+1 407 789 4529</p>
@@ -595,25 +683,6 @@
                         <a class="btn btn-outline-primary btn-square border-2 me-2" href="https://www.facebook.com/germanmarrufo94/" target="_blank"><i
                                 class="fab fa-facebook-f"></i></a>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">Enlaces Populares</h5>
-                    <a class="btn btn-link" href="about.html">Acerca de Nosotros</a>
-                    <a class="btn btn-link" href="contact.html">Contáctanos</a>
-                    <a class="btn btn-link" href="#!">Política de Privacidad</a>
-                    <a class="btn btn-link" href="#!">Términos y Condiciones</a>
-                    <a class="btn btn-link" href="#!">Carreras</a>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="text-white mb-4">Nuestros Servicios</h5>
-                    <a class="btn btn-link" href="service.html">Compra de Vivienda</a>
-                    <a class="btn btn-link" href="service.html">Nueva Construcción</a>
-                    <a class="btn btn-link" href="service.html">Venta de Propiedades</a>
-                    <a class="btn btn-link" href="service.html">Pre-aprobación</a>
-                    <a class="btn btn-link" href="service.html">Orientación Financiera</a>
-                    <a class="btn btn-link" href="service.html">Relocation</a>
-                    <a class="btn btn-link" href="service.html">Inversión</a>
-                    <a class="btn btn-link" href="service.html">Tours Virtuales</a>
                 </div>
             </div>
         </div>
@@ -631,10 +700,12 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="index.html">Inicio</a>
-                            <a href="#!">Cookies</a>
-                            <a href="#!">Ayuda</a>
-                            <a href="#!">Preguntas Frecuentes</a>
+                            <a href="#inicio">Inicio</a>
+                            <a href="#acerca-de">Acerca de</a>
+                            <a href="#nuestra-garantia">Nuestra Garantía</a>
+                            <a href="#servicios">Servicios</a>
+                            <a href="#equipo">Equipo</a>
+                            <a href="#contacto">Contacto</a>
                         </div>
                     </div>
                 </div>
@@ -658,6 +729,54 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Dynamic Menu Highlight Script -->
+    <script>
+        // Function to update active menu item based on scroll position
+        function updateActiveMenuItem() {
+            const sections = ['inicio', 'acerca-de', 'nuestra-garantia', 'servicios', 'equipo', 'contacto'];
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Get current scroll position
+            const scrollPosition = window.scrollY + 100; // Offset for better detection
+            
+            // Check which section is currently in view
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section && section.offsetTop <= scrollPosition) {
+                    // Find and activate the corresponding nav link
+                    const activeLink = document.querySelector(`a[href="#${sections[i]}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                    break;
+                }
+            }
+        }
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', updateActiveMenuItem);
+        
+        // Add click event listeners to menu items (header and footer)
+        document.querySelectorAll('.navbar-nav .nav-link, .footer-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Remove active class from all header nav links
+                document.querySelectorAll('.navbar-nav .nav-link').forEach(l => l.classList.remove('active'));
+                // Add active class to corresponding header nav link
+                const href = this.getAttribute('href');
+                const headerLink = document.querySelector(`.navbar-nav a[href="${href}"]`);
+                if (headerLink) {
+                    headerLink.classList.add('active');
+                }
+            });
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', updateActiveMenuItem);
+    </script>
 </body>
 
 </html>

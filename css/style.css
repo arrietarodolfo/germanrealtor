@@ -1,5 +1,24 @@
 /********** Template CSS **********/
 
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll offset for navigation */
+#contacto {
+    scroll-margin-top: 100px;
+}
+
+#nuestra-garantia {
+    scroll-margin-top: 80px;
+}
+
+/* Download Guide Button Font */
+.btn-download-guide {
+    font-family: "Space Grotesk", sans-serif;
+}
+
 /*** Custom Fonts ***/
 @font-face {
     font-family: 'Golften';
@@ -49,6 +68,38 @@
 
 .about-award-box {
     background-color: #964726 !important;
+}
+
+.about-award-box h5 {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .about-award-box h5 {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-award-box h5 {
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile layout for About section */
+@media (max-width: 991px) {
+    .about-section .col-lg-6:first-child {
+        order: 2;
+    }
+    
+    .about-section .col-lg-6:last-child {
+        order: 1;
+    }
+    
+    .about-section .col-lg-6:last-child h1 {
+        text-align: center;
+        margin-bottom: 2rem !important;
+    }
 }
 
 /*** Spinner ***/

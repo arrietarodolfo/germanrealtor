@@ -282,26 +282,44 @@ html {
 /* Responsive adjustments for header carousel */
 @media (max-width: 768px) {
     .header-carousel {
-        padding: 20px 0 20px 0;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .header-carousel::before {
-        width: 100%;
-        height: 100%;
+        display: none !important;
     }
     
     .header-carousel .owl-dots {
         right: 20px;
+        bottom: 20px;
+        top: auto;
+        transform: none;
+    }
+    
+    .header-carousel .owl-stage-outer {
+        overflow: visible !important;
+    }
+    
+    .header-carousel .owl-stage {
+        display: flex !important;
+    }
+    
+    .header-carousel .owl-item {
+        width: 100% !important;
+        flex-shrink: 0 !important;
     }
 }
 
 @media (max-width: 576px) {
     .header-carousel {
-        padding: 15px 0 15px 0;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .header-carousel .owl-dots {
         right: 15px;
+        bottom: 15px;
     }
     
     .header-carousel .owl-dot {
@@ -311,6 +329,37 @@ html {
     
     .header-carousel .owl-dot.active {
         height: 24px;
+    }
+    
+    .header-carousel img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+}
+
+/* Additional mobile carousel fixes */
+@media (max-width: 991px) {
+    .header-carousel {
+        padding: 0 !important;
+    }
+    
+    .header-carousel::before {
+        display: none !important;
+    }
+    
+    .header-carousel .owl-stage-outer {
+        overflow: hidden !important;
+        border-radius: 8px;
+    }
+    
+    .header-carousel .owl-item {
+        opacity: 1 !important;
+    }
+    
+    .header-carousel .owl-item.active {
+        opacity: 1 !important;
     }
 }
 

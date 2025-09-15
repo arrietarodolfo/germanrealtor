@@ -46,7 +46,24 @@
         smartSpeed: 1000,
         loop: true,
         dots: true,
-        items: 1
+        items: 1,
+        responsive: {
+            0: {
+                items: 1,
+                dots: true,
+                autoplay: true
+            },
+            768: {
+                items: 1,
+                dots: true,
+                autoplay: true
+            },
+            1024: {
+                items: 1,
+                dots: true,
+                autoplay: true
+            }
+        }
     });
 
 

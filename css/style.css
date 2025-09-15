@@ -361,6 +361,22 @@ html {
     .header-carousel .owl-item.active {
         opacity: 1 !important;
     }
+    
+    /* Force carousel to work properly on mobile */
+    .header-carousel .owl-stage {
+        display: flex !important;
+    }
+    
+    .header-carousel .owl-item {
+        width: 100% !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .header-carousel img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
 }
 
 /* Hero section responsive adjustments */

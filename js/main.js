@@ -43,7 +43,7 @@
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
-        autoplayTimeout: 4000,
+        autoplayTimeout: 3000,
         smartSpeed: 1000,
         loop: true,
         dots: true,
@@ -51,45 +51,46 @@
         nav: false,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: false,
+        freeDrag: false,
+        margin: 0,
+        stagePadding: 0,
+        merge: false,
+        mergeFit: true,
+        autoWidth: false,
+        startPosition: 0,
+        URLhashListener: false,
+        navText: ['', ''],
         responsive: {
             0: {
                 items: 1,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 4000
+                autoplayTimeout: 3000
             },
             768: {
                 items: 1,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 4000
+                autoplayTimeout: 3000
             },
             1024: {
                 items: 1,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 4000
+                autoplayTimeout: 3000
             }
         }
     });
 
-    // Force carousel initialization on mobile
+    // Force carousel initialization
     $(document).ready(function() {
-        // Refresh carousel after a short delay to ensure proper initialization
+        // Refresh carousel after page load
         setTimeout(function() {
-            if ($(window).width() <= 991) {
-                $('.header-carousel').trigger('refresh.owl.carousel');
-            }
-        }, 500);
-        
-        // Also refresh on window resize
-        $(window).on('resize', function() {
-            if ($(window).width() <= 991) {
-                setTimeout(function() {
-                    $('.header-carousel').trigger('refresh.owl.carousel');
-                }, 100);
-            }
-        });
+            $('.header-carousel').trigger('refresh.owl.carousel');
+        }, 1000);
     });
 
 

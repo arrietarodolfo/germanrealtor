@@ -298,7 +298,7 @@ html {
     }
     
     .header-carousel .owl-stage-outer {
-        overflow: visible !important;
+        overflow: hidden !important;
     }
     
     .header-carousel .owl-stage {
@@ -308,6 +308,13 @@ html {
     .header-carousel .owl-item {
         width: 100% !important;
         flex-shrink: 0 !important;
+    }
+    
+    .header-carousel img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        display: block !important;
     }
 }
 
@@ -356,26 +363,22 @@ html {
     
     .header-carousel .owl-item {
         opacity: 1 !important;
+        width: 100% !important;
     }
     
     .header-carousel .owl-item.active {
         opacity: 1 !important;
     }
     
-    /* Force carousel to work properly on mobile */
     .header-carousel .owl-stage {
         display: flex !important;
-    }
-    
-    .header-carousel .owl-item {
-        width: 100% !important;
-        flex-shrink: 0 !important;
     }
     
     .header-carousel img {
         width: 100% !important;
         height: auto !important;
         display: block !important;
+        object-fit: cover !important;
     }
 }
 

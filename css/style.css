@@ -279,27 +279,6 @@ html {
     background: var(--bs-white);
 }
 
-/* Base carousel styles */
-.header-carousel .owl-stage-outer {
-    overflow: hidden;
-}
-
-.header-carousel .owl-stage {
-    display: flex;
-}
-
-.header-carousel .owl-item {
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.header-carousel img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
 /* Mobile carousel adjustments */
 @media (max-width: 991px) {
     .header-carousel {
@@ -340,7 +319,7 @@ html {
     .header-carousel img {
         width: 100% !important;
         height: auto !important;
-        max-height: 400px !important;
+        max-height: 350px !important;
         object-fit: cover !important;
         display: block !important;
     }
@@ -362,7 +341,7 @@ html {
     }
     
     .header-carousel img {
-        max-height: 300px !important;
+        max-height: 250px !important;
     }
 }
 

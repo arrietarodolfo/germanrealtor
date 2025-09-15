@@ -51,8 +51,8 @@
         nav: false,
         animateOut: 'fadeOut',
         animateIn: 'fadeIn',
-        mouseDrag: true,
-        touchDrag: true,
+        mouseDrag: false,
+        touchDrag: false,
         pullDrag: false,
         freeDrag: false,
         margin: 0,
@@ -68,29 +68,27 @@
                 items: 1,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 3000
+                autoplayTimeout: 3000,
+                mouseDrag: false,
+                touchDrag: false
             },
             768: {
                 items: 1,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 3000
+                autoplayTimeout: 3000,
+                mouseDrag: false,
+                touchDrag: false
             },
             1024: {
                 items: 1,
                 dots: true,
                 autoplay: true,
-                autoplayTimeout: 3000
+                autoplayTimeout: 3000,
+                mouseDrag: false,
+                touchDrag: false
             }
         }
-    });
-
-    // Force carousel initialization
-    $(document).ready(function() {
-        // Refresh carousel after page load
-        setTimeout(function() {
-            $('.header-carousel').trigger('refresh.owl.carousel');
-        }, 1000);
     });
 
 

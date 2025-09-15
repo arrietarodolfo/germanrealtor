@@ -43,27 +43,48 @@
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
+        autoplayTimeout: 3000,
         smartSpeed: 1000,
         loop: true,
         dots: true,
         items: 1,
+        nav: false,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
         responsive: {
             0: {
                 items: 1,
                 dots: true,
-                autoplay: true
+                autoplay: true,
+                autoplayTimeout: 3000
             },
             768: {
                 items: 1,
                 dots: true,
-                autoplay: true
+                autoplay: true,
+                autoplayTimeout: 3000
             },
             1024: {
                 items: 1,
                 dots: true,
-                autoplay: true
+                autoplay: true,
+                autoplayTimeout: 3000
             }
         }
+    });
+
+    // Force carousel refresh on mobile
+    $(window).on('resize', function() {
+        if ($(window).width() <= 768) {
+            $('.header-carousel').trigger('refresh.owl.carousel');
+        }
+    });
+
+    // Initialize carousel after page load
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.header-carousel').trigger('refresh.owl.carousel');
+        }, 1000);
     });
 
 

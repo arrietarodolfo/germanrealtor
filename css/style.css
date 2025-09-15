@@ -279,6 +279,21 @@ html {
     background: var(--bs-white);
 }
 
+/* Ensure all carousel items are visible */
+.header-carousel .owl-item {
+    opacity: 1 !important;
+}
+
+.header-carousel .owl-item.active {
+    opacity: 1 !important;
+}
+
+.header-carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Responsive adjustments for header carousel */
 @media (max-width: 768px) {
     .header-carousel {
@@ -298,16 +313,23 @@ html {
     }
     
     .header-carousel .owl-stage-outer {
-        overflow: visible !important;
-    }
-    
-    .header-carousel .owl-stage {
-        display: flex !important;
+        overflow: hidden !important;
+        border-radius: 8px;
     }
     
     .header-carousel .owl-item {
+        opacity: 1 !important;
         width: 100% !important;
-        flex-shrink: 0 !important;
+    }
+    
+    .header-carousel .owl-item.active {
+        opacity: 1 !important;
+    }
+    
+    .header-carousel img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
     }
 }
 
@@ -334,32 +356,7 @@ html {
     .header-carousel img {
         width: 100% !important;
         height: auto !important;
-        object-fit: cover !important;
         display: block !important;
-    }
-}
-
-/* Additional mobile carousel fixes */
-@media (max-width: 991px) {
-    .header-carousel {
-        padding: 0 !important;
-    }
-    
-    .header-carousel::before {
-        display: none !important;
-    }
-    
-    .header-carousel .owl-stage-outer {
-        overflow: hidden !important;
-        border-radius: 8px;
-    }
-    
-    .header-carousel .owl-item {
-        opacity: 1 !important;
-    }
-    
-    .header-carousel .owl-item.active {
-        opacity: 1 !important;
     }
 }
 

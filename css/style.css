@@ -279,6 +279,113 @@ html {
     background: var(--bs-white);
 }
 
+/* Hero carousel images styling */
+.header-carousel .owl-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-carousel .owl-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: block;
+    max-width: 100%;
+}
+
+.header-carousel .owl-item:hover img {
+    transform: scale(1.02);
+}
+
+/* Ensure carousel container has proper dimensions */
+.header-carousel .owl-stage-outer {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.header-carousel .owl-stage {
+    display: flex;
+    align-items: center;
+}
+
+/* Responsive adjustments for hero carousel images */
+@media (max-width: 768px) {
+    .header-carousel {
+        padding: 20px 0;
+    }
+    
+    .header-carousel .owl-item img {
+        height: 300px;
+        border-radius: 6px;
+    }
+    
+    .header-carousel::before {
+        display: none;
+    }
+    
+    .header-carousel .owl-dots {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .header-carousel .owl-dot {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-carousel .owl-item img {
+        height: 250px;
+    }
+}
+
+/* Additional fixes for hero carousel */
+.header-carousel .owl-item img.img-fluid {
+    width: 100% !important;
+    height: auto;
+    min-height: 300px;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Ensure all images load properly */
+.header-carousel .owl-item img[src*="hero-slider-111"],
+.header-carousel .owl-item img[src*="hero-slider-22"],
+.header-carousel .owl-item img[src*="hero-slider-44"] {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .header-carousel .owl-item img[src*="hero-slider-111"],
+    .header-carousel .owl-item img[src*="hero-slider-22"],
+    .header-carousel .owl-item img[src*="hero-slider-44"] {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-carousel .owl-item img[src*="hero-slider-111"],
+    .header-carousel .owl-item img[src*="hero-slider-22"],
+    .header-carousel .owl-item img[src*="hero-slider-44"] {
+        height: 250px;
+    }
+}
+
 
 /* Hero section responsive adjustments */
 @media (max-width: 768px) {

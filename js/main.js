@@ -43,95 +43,10 @@
     // Header carousel
     $(".header-carousel").owlCarousel({
         autoplay: true,
-        autoplayTimeout: 3000,
         smartSpeed: 1000,
         loop: true,
         dots: true,
-        items: 1,
-        nav: false,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        mouseDrag: false,
-        touchDrag: false,
-        pullDrag: false,
-        freeDrag: false,
-        margin: 0,
-        stagePadding: 0,
-        merge: false,
-        mergeFit: true,
-        autoWidth: false,
-        startPosition: 0,
-        URLhashListener: false,
-        navText: ['', ''],
-        responsive: {
-            0: {
-                items: 1,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                mouseDrag: false,
-                touchDrag: false
-            },
-            768: {
-                items: 1,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                mouseDrag: false,
-                touchDrag: false
-            },
-            1024: {
-                items: 1,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                mouseDrag: false,
-                touchDrag: false
-            }
-        }
-    });
-
-    // Force carousel initialization on mobile
-    $(document).ready(function() {
-        // Wait for everything to load
-        setTimeout(function() {
-            // Destroy and recreate carousel on mobile
-            if ($(window).width() <= 991) {
-                $('.header-carousel').trigger('destroy.owl.carousel');
-                $('.header-carousel').owlCarousel({
-                    autoplay: true,
-                    autoplayTimeout: 3000,
-                    smartSpeed: 1000,
-                    loop: true,
-                    dots: true,
-                    items: 1,
-                    nav: false,
-                    animateOut: 'fadeOut',
-                    animateIn: 'fadeIn',
-                    mouseDrag: false,
-                    touchDrag: false,
-                    pullDrag: false,
-                    freeDrag: false,
-                    margin: 0,
-                    stagePadding: 0,
-                    merge: false,
-                    mergeFit: true,
-                    autoWidth: false,
-                    startPosition: 0,
-                    URLhashListener: false,
-                    navText: ['', '']
-                });
-            }
-        }, 1000);
-    });
-
-    // Additional mobile carousel fix
-    $(window).on('load', function() {
-        setTimeout(function() {
-            if ($(window).width() <= 991) {
-                $('.header-carousel').trigger('refresh.owl.carousel');
-            }
-        }, 500);
+        items: 1
     });
 
 

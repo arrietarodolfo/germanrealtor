@@ -369,12 +369,31 @@ html {
     display: block;
 }
 
+/* Specific fix for hero-slider-22.JPG */
+.header-carousel .owl-item img[src*="hero-slider-22"] {
+    width: 100% !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    background-color: #f8f9fa;
+}
+
 /* Mobile specific adjustments */
 @media (max-width: 768px) {
     .header-carousel .owl-item img[src*="hero-slider-111"],
     .header-carousel .owl-item img[src*="hero-slider-22"],
     .header-carousel .owl-item img[src*="hero-slider-44"] {
         height: 300px;
+    }
+    
+    /* Specific mobile fix for hero-slider-22 */
+    .header-carousel .owl-item img[src*="hero-slider-22"] {
+        height: 300px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        display: block !important;
     }
 }
 
@@ -383,6 +402,15 @@ html {
     .header-carousel .owl-item img[src*="hero-slider-22"],
     .header-carousel .owl-item img[src*="hero-slider-44"] {
         height: 250px;
+    }
+    
+    /* Specific mobile fix for hero-slider-22 on small screens */
+    .header-carousel .owl-item img[src*="hero-slider-22"] {
+        height: 250px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        display: block !important;
     }
 }
 

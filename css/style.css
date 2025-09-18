@@ -791,16 +791,48 @@ html {
     color: var(--bs-white);
 }
 
+.footer .footer-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
 .footer .footer-menu a {
     margin-right: 15px;
     padding-right: 15px;
     border-right: 1px solid rgba(255, 255, 255, .1);
+    flex-shrink: 0;
+    display: inline-block;
 }
 
 .footer .footer-menu a:last-child {
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/* Footer menu responsive adjustments */
+@media (max-width: 768px) {
+    .footer .footer-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer .footer-menu a {
+        margin-right: 10px;
+        padding-right: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer .footer-menu a {
+        margin-right: 8px;
+        padding-right: 8px;
+        font-size: 0.8rem;
+    }
 }
 
 /* Closing Ceremonies Stack Carousel */

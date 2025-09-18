@@ -62,6 +62,18 @@
         nav: false
     });
 
+    // New Testimonials carousel
+    $(".testimonials-carousel").owlCarousel({
+        items: 1,
+        autoplay: true,
+        smartSpeed: 1000,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        dots: true,
+        loop: true,
+        nav: false
+    });
+
 // Closing Ceremonies Stack Carousel
 const carousel = document.querySelector('.closing-stack-carousel');
 if (carousel) {
